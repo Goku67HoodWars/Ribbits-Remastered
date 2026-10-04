@@ -1,0 +1,19 @@
+# Build output
+build/
+*/build/
+.gradle/
+
+# Dev run dirs
+run/
+runs/
+*/runs/
+
+# Unused local deps (we are standalone — do not redistribute YUNG's API jar)
+localdeps/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+*/run/

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.yungnickyoung.minecraft.ribbits.forge.mixin.mixins.supporters",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "ribbits-forge-forge.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "HumanoidArmorLayerMixinForge"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "name": "ribbits:houses",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/small_house_red_1",
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/small_house_brown_1",
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/small_house_red_2",
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/small_house_brown_2",
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/small_house_red_3",
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/small_house_brown_3",
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/md_red_house_1",
+        "max_count": 2,
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/md_brown_house_1",
+        "max_count": 2,
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "location": "ribbits:houses/lg_red_house_1",
+        "max_count": 1,
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "location": "ribbits:houses/lg_brown_house_1",
+        "max_count": 1,
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/red_fishing_house",
+        "max_count": 1,
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/brown_fishing_house",
+        "max_count": 1,
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/red_sorcerer_house",
+        "max_count": 1,
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "ribbits:houses/brown_sorcerer_house",
+        "max_count": 1,
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

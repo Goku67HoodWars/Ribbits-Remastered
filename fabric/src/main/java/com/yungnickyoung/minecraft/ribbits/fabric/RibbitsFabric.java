@@ -1,0 +1,51 @@
+package com.yungnickyoung.minecraft.ribbits.fabric;
+
+import com.yungnickyoung.minecraft.ribbits.RibbitsCommon;
+import com.yungnickyoung.minecraft.ribbits.entity.RibbitEntity;
+import com.yungnickyoung.minecraft.ribbits.fabric.module.EntityDataSerializerModuleFabric;
+import com.yungnickyoung.minecraft.ribbits.fabric.module.NetworkModuleFabric;
+import com.yungnickyoung.minecraft.ribbits.module.EntityTypeModule;
+import com.yungnickyoung.minecraft.ribbits.network.payload.RequestSupporterHatStatePayload;
+import com.yungnickyoung.minecraft.ribbits.player.PlayerInstrumentTracker;
+import com.yungnickyoung.minecraft.ribbits.registry.DeferredRegistry;
+import com.yungnickyoung.minecraft.ribbits.registry.RibbitsRegistries;
+import com.yungnickyoung.minecraft.ribbits.supporters.SupportersListServer;
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.server.MinecraftServer;
+
+import java.util.List;
+import java.util.UUID;
+
+public class RibbitsFabric implements ModInitializer {
+    private static MinecraftServer currentServer;
+
+    @Override
+    public void onInitialize() {
+        // Fabric registries are open during mod init, so the pending entries go straight in.
+        RibbitsRegistries.bootstrap();
+        RibbitsRegistries.all().forEach(DeferredRegistry::registerAll);
+        FabricDefaultAttributeRegistry.register(EntityTypeModule.RIBBIT.get(), RibbitEntity.createRibbitAttributes());
+
+        ServerLifecycleEvents.SERVER_STARTED.register(server -> currentServer = server);
+        ServerLifecycleEvents.SERVER_STOPPED.register(server -> currentServer = null);
+
+        EntityDataSerializerModuleFabric.init();
+        NetworkModuleFabric.register();
+        RibbitsCommon.init();
+
+        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+            List<UUID> playersWithSupporterHat = SupportersListServer.getPlayersWithSupporterHat().stream().toList();
+            ServerPlayNetworking.send(handler.getPlayer(), new RequestSupporterHatStatePayload(playersWithSupporterHat));
+        });
+        ServerTickEvents.START_SERVER_TICK.register(server -> PlayerInstrumentTracker.onServerTick());
+    }
+
+    public static MinecraftServer getCurrentServer() {
+        return currentServer;
+    }
+}

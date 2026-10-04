@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[24,)"
+issueTrackerURL = "https://github.com/yungnickyoung/Ribbits/issues"
+license = "GNU LGPL 3.0"
+
+[[mods]]
+modId = "ribbits"
+version = "${version}"
+displayName = "Ribbits Remastered"
+authors = "Joosh, YUNGNICKYOUNG, HellionGames, Refresh Studios"
+credits = "Originally created by Joosh, YUNGNICKYOUNG, Flechazo, HellionGames and Refresh Studios."
+description = "A standalone, dependency-free remaster of Ribbits - cute little frogs that live in swamp villages."
+logoFile = "logo.png"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/ribbits"
+
+[[dependencies.ribbits]]
+modId = "forge"
+mandatory = true
+versionRange = "[65,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.ribbits]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[26.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.ribbits]]
+modId = "geckolib"
+versionRange = "[1.0.0,)"
+mandatory = true
+ordering = "NONE"
+side = "BOTH"

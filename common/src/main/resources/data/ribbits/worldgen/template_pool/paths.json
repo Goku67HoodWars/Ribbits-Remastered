@@ -1,0 +1,74 @@
+{
+  "name": "ribbits:paths",
+  "fallback": "ribbits:paths_fallback",
+  "elements": [
+    {
+      "weight": 5,
+      "element": {
+        "location": "ribbits:paths/path_straight_0",
+        "processors": "ribbits:main",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "ribbits:paths/path_turn_0",
+        "processors": "ribbits:main",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "ribbits:paths/path_turn_1",
+        "processors": "ribbits:main",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "ribbits:paths/path_deadend_0",
+        "max_count": 1,
+        "processors": "ribbits:main",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "ribbits:paths/path_deadend_1",
+        "max_count": 1,
+        "processors": "ribbits:main",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "ribbits:paths/path_3_0",
+        "max_count": 1,
+        "processors": "ribbits:main",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "ribbits:paths/path_bridge",
+        "max_count": 1,
+        "processors": "ribbits:main",
+        "projection": "rigid",
+        "deadend_pool": "ribbits:paths_fallback",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
