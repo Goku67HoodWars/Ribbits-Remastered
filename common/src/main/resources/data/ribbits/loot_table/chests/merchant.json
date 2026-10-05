@@ -14,7 +14,7 @@
                     "weight": 8,
                     "functions": [
                         {
-                            "function": "minecraft:set_count",
+                            "type": "minecraft:set_count",
                             "count": {
                                 "type": "minecraft:uniform",
                                 "min": 2.0,
@@ -30,7 +30,7 @@
                     "weight": 1,
                     "functions": [
                         {
-                            "function": "minecraft:set_count",
+                            "type": "minecraft:set_count",
                             "count": 1,
                             "add": false
                         }

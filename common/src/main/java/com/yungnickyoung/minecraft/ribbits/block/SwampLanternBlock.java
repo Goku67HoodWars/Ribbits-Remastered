@@ -102,7 +102,7 @@ public class SwampLanternBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     public PushReaction getPistonPushReaction(BlockState blockState) {
-        return PushReaction.DESTROY;
+        return PushReaction.POPPED;
     }
 
 }

@@ -1,5 +1,6 @@
 plugins {
     id 'com.gradleup.shadow'
+    id 'net.darkhax.curseforgegradle'
 }
 
 architectury {
@@ -67,3 +68,19 @@ jar {
 }
 
 assemble.dependsOn shadowJar
+
+String[] compatibleVersions = rootProject.compatible_versions.split(',')
+task publishCurseForgeNeoForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
+    dependsOn(tasks.shadowJar)
+    apiToken = findProperty('curseforgeApiKey') ?: ''
+    debugMode = rootProject.debug_publish.toBoolean()
+
+    def mainFile = upload(rootProject.curseforge_project_id, tasks.shadowJar.archiveFile)
+    mainFile.changelogType = 'markdown'
+    mainFile.changelog = rootProject.file('CHANGELOG.md').exists() ? rootProject.file('CHANGELOG.md').text : 'No changelog provided'
+    mainFile.releaseType = 'release'
+    mainFile.addRequirement('geckolib')
+    mainFile.addModLoader('neoforge')
+    mainFile.displayName = "${rootProject.mod_full_name} [NeoForge] ${project.version} for ${rootProject.mc_version}"
+    compatibleVersions.each { mcVersion -> mainFile.addGameVersion(mcVersion) }
+}

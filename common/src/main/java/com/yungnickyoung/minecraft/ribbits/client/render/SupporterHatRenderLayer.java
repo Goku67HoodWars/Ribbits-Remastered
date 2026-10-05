@@ -48,8 +48,7 @@ public class SupporterHatRenderLayer extends RenderLayer<AvatarRenderState, Play
                 RenderTypes.entityCutout(TEXTURE),
                 packedLight,
                 OverlayTexture.NO_OVERLAY,
-                state.outlineColor,
-                null
+                state.outlineColor
         );
         poseStack.popPose();
     }

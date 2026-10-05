@@ -1,0 +1,12 @@
+{
+  "type": "ribbits:vegetation_block_feature",
+  "on_solid_state_provider": {
+    "type": "minecraft:simple",
+    "state": {
+      "id": "ribbits:toadstool"
+    }
+  },
+  "tries": 10,
+  "xz_spread": 2,
+  "y_spread": 1
+}

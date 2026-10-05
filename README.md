@@ -1,6 +1,6 @@
 # Ribbits Remastered
 
-A standalone, dependency-free port/remaster of the **Ribbits** mod for Minecraft **26.2**.
+A standalone, dependency-free port/remaster of the **Ribbits** mod for Minecraft **26.3**.
 
 Ribbits fills the swamps with cozy little villages inhabited by *ribbits* — tiny
 frog folk who live in the marsh, occasionally gather to play music (which you can
@@ -14,7 +14,7 @@ was reimplemented self-contained, so nothing external is needed.
 
 ## Loaders / versions
 
-- Minecraft **26.2** — **Fabric, Forge, and NeoForge**.
+- Minecraft **26.3** — **Fabric, Forge, and NeoForge**.
 
 ## Credits
 
@@ -30,7 +30,7 @@ Original **Ribbits** team:
 
 Original project: <https://www.curseforge.com/minecraft/mc-mods/ribbits>
 
-This remaster updates that work to 26.2 as a self-contained, multi-loader build —
+This remaster updates that work to 26.3 as a self-contained, multi-loader build —
 removing the YUNG's API dependency, using cross-loader registration, and shipping a
 dependency-free config screen.
 
@@ -51,4 +51,4 @@ Requires JDK 25.
 
 Builds all loaders; the distributable jars land in `fabric/build/libs/`,
 `forge/build/libs/`, and `neoforge/build/libs/` (named
-`RibbitsRemastered-26.2-<Loader>-<version>.jar`).
+`RibbitsRemastered-26.3-<Loader>-<version>.jar`).

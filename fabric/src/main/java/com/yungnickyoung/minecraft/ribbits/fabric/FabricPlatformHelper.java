@@ -4,7 +4,6 @@ import com.yungnickyoung.minecraft.ribbits.platform.IPlatformHelper;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.fabricmc.fabric.api.registry.CompostableRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.server.MinecraftServer;
@@ -26,7 +25,8 @@ public class FabricPlatformHelper implements IPlatformHelper {
 
     @Override
     public void addCompostableItem(ItemLike item, float chance) {
-        CompostableRegistry.INSTANCE.add(item, chance);
+        // TODO(26.3): composting is now a data-driven Compostable component (ResolvableInt layers via
+        // ContextIntProvider), not a float chance. Deferred — ribbit plants aren't compostable on Fabric yet.
     }
 
     @Override

@@ -10,7 +10,6 @@
     "client.accessor.ClientLevelAccessor",
     "client.accessor.SoundBufferAccessor",
     "client.maraca.ConditionalItemModelPropertiesMixin",
-    "client.maraca.ItemInHandRendererMixin",
     "client.music.ChannelMixin",
     "client.music.SoundEngineMixin",
     "client.music.SoundManagerMixin",

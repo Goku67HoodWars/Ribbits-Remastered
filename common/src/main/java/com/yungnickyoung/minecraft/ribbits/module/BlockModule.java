@@ -67,7 +67,7 @@ public class BlockModule {
                             .sound(SoundType.LANTERN)
                             .lightLevel(ignored -> 15)
                             .noOcclusion()
-                            .pushReaction(PushReaction.DESTROY)
+                            .pushReaction(PushReaction.POPPED)
                             .setId(RegisterHelper.blockKey("swamp_lantern"))
             ))
             .withItem(Item.Properties::new);
@@ -79,7 +79,7 @@ public class BlockModule {
                     .instabreak()
                     .sound(SoundType.LILY_PAD)
                     .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)
+                    .pushReaction(PushReaction.POPPED)
                     .setId(RegisterHelper.blockKey("giant_lilypad"))
     ));
 
@@ -134,7 +134,7 @@ public class BlockModule {
                                     .strength(3.0f)
                                     .noOcclusion()
                                     .ignitedByLava()
-                                    .pushReaction(PushReaction.DESTROY)
+                                    .pushReaction(PushReaction.POPPED)
                                     .sound(SoundType.WOOD)
                                     .setId(RegisterHelper.blockKey("mossy_oak_door"))
                     ))

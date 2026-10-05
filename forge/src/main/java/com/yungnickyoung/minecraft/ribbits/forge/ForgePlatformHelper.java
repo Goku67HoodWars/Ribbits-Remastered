@@ -8,7 +8,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FireBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -28,7 +27,8 @@ public class ForgePlatformHelper implements IPlatformHelper {
 
     @Override
     public void addCompostableItem(ItemLike item, float chance) {
-        ComposterBlock.COMPOSTABLES.put(item.asItem(), chance);
+        // TODO(26.3): ComposterBlock.COMPOSTABLES was removed; composting is now the Compostable data
+        // component (ContextIntProvider layers). Deferred — ribbit plants aren't compostable on Forge yet.
     }
 
     @Override

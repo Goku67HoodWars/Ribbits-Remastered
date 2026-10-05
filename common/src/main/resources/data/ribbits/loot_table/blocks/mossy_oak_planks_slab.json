@@ -9,10 +9,10 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "conditions": [
                 {
-                  "condition": "minecraft:block_state_property",
+                  "type": "minecraft:block_state_property",
                   "block": "ribbits:mossy_oak_planks_slab",
                   "properties": {
                     "type": "double"
@@ -23,7 +23,7 @@
               "add": false
             },
             {
-              "function": "minecraft:explosion_decay"
+              "type": "minecraft:explosion_decay"
             }
           ],
           "name": "ribbits:mossy_oak_planks_slab"

@@ -1,41 +1,36 @@
-# Ribbits Fabric 26.1.x - 1.0.0
+# Ribbits Remastered 26.3 — 1.0.0
 
-## 🐸 Tiny Frog Villages
+## 🐸 Minecraft 26.3 — Fabric, Forge & NeoForge
 
-- 🌿 Ported Ribbits to **Fabric for Minecraft 26.1.x**.
-- 🏡 Kept Ribbit villages generating with their homes, bridges, decorations, and little village life intact.
-- 🧭 Preserved the original village structure flow while keeping the required YUNG-style generation support local to this port.
+- 🌿 Multi-loader release for **Minecraft 26.3** on **Fabric, Forge, and NeoForge**, built from one
+  Architectury codebase.
+- 🧩 Still **standalone and dependency-free** (no YUNG's API): swamp villages, ribbit professions
+  (merchants, fishermen, sorcerers, gardeners, musicians), the band/music sessions, fishing,
+  gardening, buffs, blocks, decorations, and spawn eggs all intact. Requires only **GeckoLib** (plus
+  **Fabric API** on the Fabric build).
 
-## 🎒 Ribbit Friends
+## 🔧 What the 26.2 → 26.3 port touched
 
-- 🐸 Restored Ribbit professions, spawn eggs, merchant behavior, fishing, gardening, sorcerer buffs, music sessions, umbrellas, and animations.
-- 🎵 Kept band behavior, instruments, custom sounds, and synced music playback working on the updated Fabric stack.
-- 🛒 Added vanilla-friendly trading stillness so merchant Ribbits stay put while their trade screen is open.
-
-## 🧱 Blocks, Items, And Decorations
-
-- 🍃 Restored Ribbit village blocks and decorative items, including mossy oak pieces, stools, drums, maracas, party hats, and village props.
-- 🧺 Fixed missing English display names so items and blocks show friendly names instead of raw translation ids.
-- 🥚 Fixed Ribbit spawn eggs so each egg keeps its intended Ribbit variant data when used normally or in spawners.
-
-## 🦎 Fabric 26.1.x Port Work
-
-- 🧩 Updated the project to a focused Fabric-only layout for the 26.1.x port.
-- 🦎 Updated GeckoLib integration and resource paths for the current animation system.
-- 🧵 Updated Cloth Config and Fabric API compatibility for Minecraft 26.1.x.
-- 🧹 Removed unused multiloader leftovers and cleaned the project for a first public release.
+- 🗺️ **Worldgen Feature system rewrite** — 26.3 made `Feature` codec-dispatched and removed
+  `ConfiguredFeature`/`FeatureConfiguration`; the swamp-vegetation feature was rebuilt onto the new
+  model and its data moved to the new `worldgen/feature` datapack format.
+- 🧱 **Block API** — `BonemealableBlock` + `BonemealSource`, the removed per-block codec system, and
+  `PushReaction` renames (swamp plants / giant lily pad).
+- 🎨 **Rendering** — `PoseStack.mulPose → rotate`, the model-submit signature change, and the
+  first-person hand renderer rework.
+- 🧾 **Datapack format** — block-state keys `Name`→`id`, state-provider type renames, advancement
+  recipe-unlock `recipe`→`recipes`, and loot condition/function discriminators unified to `type`.
 
 ## 🧪 Tested
 
-- ✅ Built successfully for **Minecraft 26.1.2** on Fabric.
-- ✅ Verified in the TESTFABRIC instance.
-- ✅ Checked Ribbit village locating/generation, spawn eggs, merchant interaction, buffs, music, fishing, item names, and core animations.
+- ✅ Runtime-verified on **Fabric, Forge, and NeoForge** for Minecraft 26.3 — mod loads, ribbits
+  spawn and animate, and swamp villages generate (`/locate structure ribbits:ribbit_village`).
 
 ## 💚 Credits
 
-- 🌱 Original Ribbits mod, concept, art, assets, and design by the original creators: **Joosh**, **YUNGNICKYOUNG**, **HellionGames**, **Refresh Studios**, and associated original contributors.
-- 🛠️ Original project: https://github.com/yungnickyoung/Ribbits
-- 🐸 Official CurseForge page: https://www.curseforge.com/minecraft/mc-mods/ribbits
-- 🧰 YUNG's API / YUNG-GANG: https://github.com/YUNG-GANG/YUNGs-API
+- 🌱 Original **Ribbits** mod, concept, art, assets, and design by the original team: **Joosh**,
+  **yungnickyoung**, **HellionGames**, **Refresh Studios**, and the original contributors.
+- 🐸 Original project: https://www.curseforge.com/minecraft/mc-mods/ribbits
 
-This is an unofficial Fabric 26.1.x port made to keep Ribbits playable on newer Minecraft versions while preserving the spirit of the original mod.
+An unofficial community continuation to keep Ribbits playable on newer Minecraft versions, preserving
+the spirit of the original. Code under LGPL-3.0; assets remain © Refresh Studios & Bonsai Studios.

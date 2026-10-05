@@ -42,8 +42,10 @@ public final class RibbitsRegistries {
             DeferredRegistry.of(BuiltInRegistries.PARTICLE_TYPE, Registries.PARTICLE_TYPE);
     public static final DeferredRegistry<SoundEvent> SOUND_EVENTS =
             DeferredRegistry.of(BuiltInRegistries.SOUND_EVENT, Registries.SOUND_EVENT);
-    public static final DeferredRegistry<Feature<?>> FEATURES =
-            DeferredRegistry.of(BuiltInRegistries.FEATURE, Registries.FEATURE);
+    // 26.3: features are codec-dispatched — the registry holds the feature's MapCodec (into FEATURE_TYPE),
+    // mirroring the structure-processor registry below. Feature is no longer a generic class.
+    public static final DeferredRegistry<MapCodec<? extends Feature>> FEATURES =
+            DeferredRegistry.of(BuiltInRegistries.FEATURE_TYPE, Registries.FEATURE_TYPE);
     public static final DeferredRegistry<MapCodec<? extends StructureProcessor>> STRUCTURE_PROCESSORS =
             DeferredRegistry.of(BuiltInRegistries.STRUCTURE_PROCESSOR, Registries.STRUCTURE_PROCESSOR);
     public static final DeferredRegistry<CreativeModeTab> CREATIVE_TABS =

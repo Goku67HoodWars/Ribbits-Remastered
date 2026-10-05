@@ -1,5 +1,7 @@
 package com.yungnickyoung.minecraft.ribbits.entity.goal;
 
+import com.yungnickyoung.minecraft.ribbits.util.BlockPosUtil;
+
 import com.yungnickyoung.minecraft.ribbits.entity.RibbitEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -115,7 +117,7 @@ public class RibbitFishGoal extends Goal {
     }
 
     private Optional<FishingSpot> findFishingSpot() {
-        Optional<BlockPos> waterPos = BlockPos.findClosestMatch(this.ribbit.getOnPos(), (int) this.range, 5, this::isValidWaterPos);
+        Optional<BlockPos> waterPos = BlockPosUtil.findClosestMatch(this.ribbit.getOnPos(), (int) this.range, 5, this::isValidWaterPos);
         return waterPos.flatMap(pos -> this.findDryFishingPos(pos).map(dryPos -> new FishingSpot(pos, dryPos)));
     }
 
