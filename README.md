@@ -1,6 +1,7 @@
 # Ribbits Remastered
 
-A standalone, dependency-free port/remaster of the **Ribbits** mod for Minecraft **26.3**.
+A standalone, dependency-free port/remaster of the **Ribbits** mod, maintained across
+**multiple Minecraft versions**.
 
 Ribbits fills the swamps with cozy little villages inhabited by *ribbits* — tiny
 frog folk who live in the marsh, occasionally gather to play music (which you can
@@ -12,9 +13,18 @@ This build runs entirely on its own — **no YUNG's API** or any other library r
 The structure/jigsaw system was moved onto vanilla worldgen and the registration layer
 was reimplemented self-contained, so nothing external is needed.
 
-## Loaders / versions
+## Versions
 
-- Minecraft **26.3** — **Fabric, Forge, and NeoForge**.
+Each Minecraft version lives on its own branch and has its own release.
+
+| Minecraft | Loaders | Branch | Release |
+|---|---|---|---|
+| **26.3** | Fabric · Forge · NeoForge | [`main`](../../tree/main) | [26.3-1.0.0](../../releases/tag/26.3-1.0.0) |
+| **26.2** | Fabric · Forge · NeoForge | [`26.2`](../../tree/26.2) | [v1.0.1](../../releases/tag/v1.0.1) |
+
+Also available on **CurseForge**. Every build requires **GeckoLib**; the Fabric build
+additionally requires **Fabric API** (and optionally **Mod Menu** for the config
+screen button).
 
 ## Credits
 
@@ -30,9 +40,9 @@ Original **Ribbits** team:
 
 Original project: <https://www.curseforge.com/minecraft/mc-mods/ribbits>
 
-This remaster updates that work to 26.3 as a self-contained, multi-loader build —
-removing the YUNG's API dependency, using cross-loader registration, and shipping a
-dependency-free config screen.
+This remaster updates that work as a self-contained, multi-loader build — removing the
+YUNG's API dependency, using cross-loader registration, and shipping a dependency-free
+config screen.
 
 ## License
 
@@ -43,7 +53,7 @@ dependency-free config screen.
 
 ## Building
 
-Requires JDK 25.
+Requires JDK 25. Check out the branch for the Minecraft version you want, then:
 
 ```
 ./gradlew build
@@ -51,4 +61,4 @@ Requires JDK 25.
 
 Builds all loaders; the distributable jars land in `fabric/build/libs/`,
 `forge/build/libs/`, and `neoforge/build/libs/` (named
-`RibbitsRemastered-26.3-<Loader>-<version>.jar`).
+`RibbitsRemastered-<mc>-<Loader>-<version>.jar`).
